@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+}
+
+.App {
+    background: #fff;
+    height: 100vh;
+
+    &.on {
+        background: #333;
+        color: #fff;
+    }
+
+    .dark_btn {
+        position: relative;
+
+        button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: rgb(32, 98, 160);
+            border-radius: 15px;
+            font-size: 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                display: block;
+                width: 23px;
+                height: 23px;
+                border-radius: 50%;
+                background: #333;
+            }
+
+            &.on::after {
+                background: #fff;
+                left: auto;
+                right: 5px;
+            }
+        }
+
+    }
+}
